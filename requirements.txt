@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+pytest-html
+sqlalchemy
+coverage
+python-multipart
+pydantic
+fastapi
