@@ -1,6 +1,5 @@
 import uuid
 from datetime import datetime
-from typing import List
 
 from pydantic import BaseModel
 
@@ -49,7 +48,7 @@ class Strategy(BaseModel):
 class PortfolioRequest(BaseModel):
     user_id: int
     strategy_id: str = "0"
-    holdings: List[Holding]
+    holdings: list[Holding]
 
 
 class Portfolio(PortfolioRequest):
@@ -63,10 +62,6 @@ class TickData(BaseModel):
     timestamp: datetime
     price: float
 
-
-class TradeHistory(BaseModel):
-    portfolio_id: str
-    trades: List[Trade]
 
 
 class BacktestRequest(BaseModel):
@@ -82,6 +77,11 @@ class BacktestRequest(BaseModel):
 #     action: str = TradeType.BUY.value
 #     quantity: int
 #     price: float
+    
+class TradeHistory(BaseModel):
+    portfolio_id: str
+    trades: list[Trade]
+
 
 
 class BacktestResponse(BaseModel):
@@ -89,6 +89,6 @@ class BacktestResponse(BaseModel):
     end_date: datetime
     initial_capital: float
     final_capital: float
-    trades: List[Trade]
+    trades: list[Trade]
     profit_loss: float
     annualized_return: float

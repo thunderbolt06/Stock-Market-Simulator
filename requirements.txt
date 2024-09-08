@@ -7,3 +7,6 @@ coverage
 python-multipart
 pydantic
 fastapi
+jwt
+psycopg2-binary
+pandas
